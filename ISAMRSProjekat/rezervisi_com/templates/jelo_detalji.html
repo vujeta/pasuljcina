@@ -1,0 +1,27 @@
+{% extends 'menadzerPocetna.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+
+
+	<div class="row">
+	
+		{% for jel in jelo %}
+
+		<div class='col-sm-3'>
+			Naziv:  <b> {{ jel.naziv }} </b> </br> Opis: {{ jel.opis}} </br> Cena: {{ jel.cena }} </br> 
+			<img class='img-responsive' src="{{ MEDIA_URL }}{{ jel.image }}" width="250px" height="150px" /> <br/> <br/> 
+			 
+
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}

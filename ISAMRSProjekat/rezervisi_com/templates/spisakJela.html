@@ -1,0 +1,32 @@
+{% extends 'menadzerPocetna.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+	<div class="page-header">
+		<!--<input class='col-sm-1' type='submit' href='../dodaj_jelo'/>  <br/> <br/> -->
+		 <a type='submit' href="../dodaj_jelo">Dodaj Jelo</a>
+  		
+	</div>
+
+
+	<div class="row">
+	
+		{% for jelo in jela %}
+
+		<div class='col-sm-3'>
+			Naziv:  <b> {{ jelo.naziv }} </b> </br> Opis: {{ jelo.opis}} </br> Cena: {{ jelo.cena }} </br> 
+			<img class='img-responsive' src="{{ MEDIA_URL }}{{ jelo.image }}" width="250px" height="150px" /> <br/> <br/> 
+			 
+
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'menadzerPocetna.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+	<div class="page-header">
+		<input class='col-sm-2' type='submit' value='Dodaj Jelovnik'/> <br/> <br/>
+  		
+	</div>
+
+
+	<div class="row">
+	
+		{% for jelovnik in jelovnici %}
+
+		<div class='col-sm-3'>
+			Naziv: <b>{{ jelovnik.naziv }} </b><br/> <br/>
+
+			{% for jelo in jelovnik.jela.all %}
+				{{ jelo.naziv }}  - {{ jelo.cena }}din <br/>
+				<img class='img-responsive' src="{{ MEDIA_URL }}{{ jelo.image }}" /> 
+			{% endfor %}
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}

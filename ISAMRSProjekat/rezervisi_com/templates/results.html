@@ -1,0 +1,67 @@
+{% extends 'menadzerPocetna.html' %}
+
+
+
+{% block content %}
+
+<h2>Trazeno: {{ trazeno }}</h2> <br/>
+<div class="row">
+	
+		{% for jelo in jela %}
+
+		<div class='col-sm-3'>
+			Restoran: {{ jelo.restoran }}  <br/>
+			Naziv: <b> {{ jelo.naziv }} </b> </br> Opis: {{ jelo.opis}} </br> Cena: {{ jelo.cena }} </br> 
+			<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ jelo.image }}" /> <br/> <br/> -->
+		</div>
+
+		{% endfor %}
+
+		{% for pica in pice %}
+
+		<div class='col-sm-3'>
+		<b>{{ pica.restoran }} </b> <br/>
+			Naziv: {{ pica.naziv }} </br> Opis: {{ pica.opis}} </br> Cena: {{ pica.cena }} </br> 
+			<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ pice.image }}" /> <br/> <br/> -->
+
+		</div>
+
+		{% endfor %}
+
+		{% for jelovnik in jelovnici %}
+
+		<div class='col-sm-3'>
+			Naziv: {{ jelovnik.naziv }} <br/> <br/>
+			<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ pice.image }}" /> <br/> <br/> -->
+
+			{% for jelo in jelovnik.jela.all %}
+				{{ jelo.naziv }} - {{ jelo.cena }}din <br/>
+			{% endfor %}
+
+
+		</div>
+
+		{% endfor %}
+
+		{% for kartaPicaa in kartaPica %}
+
+		<div class='col-sm-3'>
+			Naziv: {{ kartaPicaa.naziv }} <br/> <br/>
+			<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ pice.image }}" /> <br/> <br/> -->
+			{% for karta in kartaPicaa.pica.all %}
+				{{ karta.naziv }} - {{ karta.cena }}din <br/>
+			{% endfor %}
+
+		</div>
+
+		{% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+

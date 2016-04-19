@@ -1,0 +1,29 @@
+{% extends 'menadzerPocetna.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+	<div class="page-header">
+		<input class='col-sm-1' type='submit' value='Dodaj Piće'/> <br/> <br/>
+  		
+	</div>
+
+
+	<div class="row">
+	
+		{% for pice in pica %}
+
+		<div class='col-sm-3'>
+			Naziv: {{ pice.naziv }} </br> Opis: {{ pice.opis}} </br> Cena: {{ pice.cena }} </br> 
+			<img class='img-responsive' src="{{ MEDIA_URL }}{{ pice.image }}" /> <br/> <br/>
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}

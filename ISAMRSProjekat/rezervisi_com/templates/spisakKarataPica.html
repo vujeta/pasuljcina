@@ -1,0 +1,32 @@
+{% extends 'menadzerPocetna.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	
+	<div class="page-header">
+		<input class='col-sm-2' type='submit' value='Dodaj Kartu Pića'/> <br/> <br/>
+  		
+	</div>
+
+
+	<div class="row">
+	
+		{% for kartaPica in kartePica %}
+
+		<div class='col-sm-3'>
+			Naziv: <b>{{ kartaPica.naziv }} </b><br/> <br/>
+			<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ pice.image }}" /> <br/> <br/> -->
+			{% for karta in kartaPica.pica.all %}
+				{{ karta.naziv }} - {{ karta.cena }}din <br/>
+				<img class='img-responsive' src="{{ MEDIA_URL }}{{ karta.image }}" /> 
+			{% endfor %}
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}
