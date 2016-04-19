@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^restorani/$', 'restorani.views.svee', name='restorani'),
     url(r'^dodaj_jelo/$', 'jela.views.dodaj_jelo', name='dodaj_jelo'),
     url(r'^s/$', 'jela.views.search', name='search'),
+    url(r'^jela/(?P<slug>[\w-]+)/$', 'jela.views.single', name='single_jelo'),
 )
 
 if settings.DEBUG:

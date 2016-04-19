@@ -16,6 +16,7 @@
 		{% for jelo in jela %}
 
 		<div class='col-sm-3'>
+			<a href='{{ jelo.get_absolute_url }}'>{{ jelo.naziv }}</a>
 			Naziv:  <b> {{ jelo.naziv }} </b> </br> Opis: {{ jelo.opis}} </br> Cena: {{ jelo.cena }} </br> 
 			<img class='img-responsive' src="{{ MEDIA_URL }}{{ jelo.image }}" width="250px" height="150px" /> <br/> <br/> 
 			 

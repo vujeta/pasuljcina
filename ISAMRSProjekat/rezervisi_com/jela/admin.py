@@ -5,7 +5,7 @@ from .models import Jelo
 
 class JeloAdmin(admin.ModelAdmin):
 	search_fields = ['naziv']
-	list_display = ['naziv', 'cena']
+	list_display = ['naziv', 'cena', 'id']
 	list_editable = ['naziv', 'cena']
 	list_filter = ['naziv']
 	class Meta:

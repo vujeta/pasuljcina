@@ -77,3 +77,13 @@ def dodaj_jelo(request):
 		"form": form,
 	}
 	return render(request, "napraviJelo.html", context)
+
+def single(request, slug):
+	try:
+		jelo = Jelo.objects.get(slug=slug)
+		#jelo = get_object_or_404(Jelo, slug=slug)
+		context = {'jelo': jelo, 'test': "test"}
+		return render(request, 'jelo_detalji.html', context)
+	except:
+		raise Http404
+
